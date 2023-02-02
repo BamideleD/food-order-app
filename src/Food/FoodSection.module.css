@@ -1,0 +1,7 @@
+.FoodSection {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    flex-direction: column;
+
+}
