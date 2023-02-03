@@ -2,13 +2,13 @@ import React from "react";
 import styles from './Meal.module.css';
 
 
-const Meal = () => {
+const Meal = (props) => {
     return (
         <div className={styles.overall}>
             <div className={styles.meal}>
-                <h3>Sushi</h3>
-                <i>Finest Fish and Veggies</i>
-                <b>$22.99</b>
+                <h3>{props.name}</h3>
+                <i>{props.desc}</i>
+                <b>{props.amount}</b>
             </div>
 
             <div className={styles.amount}>

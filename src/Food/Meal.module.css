@@ -1,5 +1,7 @@
 .overall{
     display:flex;
+    flex-direction: row;
+    justify-content: space-between;
     
 
     
@@ -14,7 +16,7 @@ h3{
 }
 
 .amount {
-  margin: 10px 10px 10px 500px
+  margin: 10px 10px 10px 500px;
 }
 
 input{
