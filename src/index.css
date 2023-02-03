@@ -5,7 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(57, 57, 57);
+  background-color: rgb(41, 40, 40);
+  background-image: linear-gradient(url('https://github.com/academind/react-complete-guide-code/blob/11-practice-food-order-app/extra-files/meals.jpg?raw=true'), rgb(41, 40, 40)) ;
+  background-repeat: no-repeat;
+  background-size: 1500px 450px;
   
 }
 
