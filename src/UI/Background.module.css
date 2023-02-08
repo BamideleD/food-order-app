@@ -1,0 +1,8 @@
+.back{
+    background-image: url('https://github.com/academind/react-complete-guide-code/blob/11-practice-food-order-app/extra-files/meals.jpg?raw=true') ;
+    background-repeat: no-repeat;
+    background-size: 1500px 450px ;
+    width: 1500px;
+    height: 450px;
+    transform: skewY(-5deg);
+}

@@ -6,13 +6,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(41, 40, 40);
-  background-image: linear-gradient(url('https://github.com/academind/react-complete-guide-code/blob/11-practice-food-order-app/extra-files/meals.jpg?raw=true'), rgb(41, 40, 40)) ;
-  background-repeat: no-repeat;
-  background-size: 1500px 450px;
-  
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* body:before{
+  content:"";
+  position: absolute;
+  bottom: 50%;
+  
+  width: 1500px;
+  height: 450px;
+  
+ 
+  
+  transform: skewY(-5deg);
+} */
