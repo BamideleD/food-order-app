@@ -9,12 +9,14 @@ import Background from "./UI/Background";
 const App = () => {
   return(
     <React.Fragment>
-      <div>
-        <Background />
-      </div>
-      <div className={styles.app1}>
-        <Info />
-        <FoodSection />
+      <div className={styles.overall}>
+        <div className={styles.back}>
+          <Background />
+          <Info />
+        </div>
+        <div className={styles.food}>
+          <FoodSection />
+        </div>
       </div>
     </React.Fragment>
   )

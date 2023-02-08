@@ -1,7 +1,23 @@
-.app1 {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
+.food{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    margin-top: 200px;
+  
   
     
+}
+
+.back{
+    display: flex;
+    justify-content: center;
+
+}
+
+.overall{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
