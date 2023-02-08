@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 60%;
    
    
   
@@ -26,26 +26,6 @@
 
 }
 
-/* @media only screen and (min-width: 481px) {
-    .overall{
-      width: 50%;
-    }
-   } */
-
-
-/* @media screen and (max-height: 950px)  {
-.food{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 80%;
-    
-
-
-
-}
-
-} */
 
 
 @media screen and (max-width: 650px)  {
@@ -61,7 +41,33 @@
     }
 }
 
-@media screen and (max-width: 480px)  {
+@media screen and (max-width: 560px)  {
+    .food{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60%;
+        
+    
+    
+    
+    }
+}
+
+@media screen and (max-width: 510px)  {
+    .food{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80%;
+        
+    
+    
+    
+    }
+}
+
+@media screen and (max-width: 450px)  {
     .food{
         display: flex;
         justify-content: center;
@@ -73,12 +79,49 @@
     
     }
 }
-@media screen and (max-width: 320px)  {
+
+@media screen and (max-width: 410px)  {
     .food{
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 150%;
+        margin-top: 120%;
+        
+    
+    
+    
+    }
+}
+@media screen and (max-width: 415px)  {
+    .food{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 130%;
+        
+    
+    
+    
+    }
+}
+@media screen and (max-width: 343px)  {
+    .food{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 200%;
+        
+    
+    
+    
+    }
+}
+@media screen and (max-width: 271px)  {
+    .food{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 250%;
         
     
     
@@ -91,7 +134,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 30%;
+        margin-top: 40%;
         
     
     
@@ -105,7 +148,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 20%;
+        margin-top: 30%;
     
     }
 
@@ -116,7 +159,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 15%;
+        margin-top: 20%;
+    
+    }
+
+}
+
+@media screen and (min-width: 1300px)  {
+    .food{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 12%;
     
     }
 
