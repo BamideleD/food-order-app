@@ -3,6 +3,8 @@ import styles from "./App.module.css";
 import FoodSection from "./Food/FoodSection";
 import Info from "./Info/Info";
 import Background from "./UI/Background";
+import Navbar from "./UI/Navbar";
+
 
 
 
@@ -12,6 +14,7 @@ const App = () => {
       <div className={styles.overall}>
         <div className={styles.back}>
           <Background />
+          <Navbar />
           <Info />
         </div>
         <div className={styles.food}>
