@@ -50,3 +50,16 @@ button {
     color: white;
 }
 
+@media screen and (max-width: 300px)  {
+    button {
+        border: 0px;
+        border-radius: 50px;
+        width: 100%;
+        padding: 5px ;
+        background-color: rgb(132, 36, 36);
+        color: white;
+    }
+}
+
+
+

@@ -5,7 +5,7 @@ import styles from './Cartnumber.module.css'
 
 const Cartnumber = () => {
     return (
-        <div>
+        <div className={styles.number}>
             {'0'}
         </div>
     )
