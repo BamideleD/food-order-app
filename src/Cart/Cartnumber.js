@@ -3,7 +3,13 @@ import styles from './Cartnumber.module.css'
 
 
 
-const Cartnumber = () => {}
+const Cartnumber = () => {
+    return (
+        <div>
+            {'0'}
+        </div>
+    )
+}
 
 
 

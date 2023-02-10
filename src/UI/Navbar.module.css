@@ -3,9 +3,17 @@
     height: 70px;
     position: absolute;
     background-color: rgb(165, 52, 42);
-    display:flex
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-h2{
-    color:white
+.reactmeals{
+    color:white;
+    padding-left: 120px;
+    
+}
+
+.cartsection{
+    padding-right: 120px;
 }

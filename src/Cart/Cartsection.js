@@ -3,7 +3,7 @@ import {FaShoppingCart} from 'react-icons/fa'
 import styles from './Cartsection.module.css'
 import Cartnumber from "./Cartnumber";
 
-const Cart = () => {
+const Cartsection = () => {
     return (
         <div className={styles.cart}>
             <FaShoppingCart />
@@ -15,4 +15,4 @@ const Cart = () => {
 
 
 
-export default Cart;
+export default Cartsection;
