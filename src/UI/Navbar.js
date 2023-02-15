@@ -1,5 +1,5 @@
 import React from "react";
-import Cartsection from "../Cart/Cartsection";
+import Cartsection from "../Cart/Outer/Cartsection";
 
 import styles from './Navbar.module.css';
 
