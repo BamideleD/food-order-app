@@ -1,0 +1,11 @@
+.overlay {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    position: fixed;
+    top: 30vh;
+    left: 28.7%;
+    width: 43%;
+    z-index: 100;
+    overflow: hidden
+}

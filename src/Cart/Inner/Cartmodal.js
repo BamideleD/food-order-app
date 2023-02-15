@@ -1,6 +1,7 @@
 import React from "react";
 import Backdrop from "./Backdrop";
-import Cartmodaloverlay from "./Cartmodaloverlay";
+import Cartoverlay from "./Cartoverlay";
+
 
 
 
@@ -10,7 +11,7 @@ const Cartmodal = () => {
     return (
         <div>
             <Backdrop />
-            <Cartmodaloverlay />
+            <Cartoverlay />
         </div>
     )
 
