@@ -12,9 +12,9 @@ import Navbar from "./UI/Navbar";
 const App = () => {
   return(
     <React.Fragment>
-      <div>
+      {/* <div>
         <Cartmodal />
-      </div>
+      </div> */}
       <div className={styles.overall}>
         <div className={styles.back}>
           <Background />
