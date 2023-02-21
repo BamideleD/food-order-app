@@ -14,7 +14,7 @@ const Cartsection = (props) => {
         <div className={styles.cart} onClick = {props.cartClick}>
             <FaShoppingCart />
             <h4> Your Cart </h4>
-            <Cartnumber />
+            <Cartnumber amount = {props.amount} cartNumber = {props.cartNumber} />
         </div>
     )
 }

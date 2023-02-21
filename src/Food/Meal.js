@@ -4,10 +4,10 @@ import styles from './Meal.module.css';
 
 const Meal = (props) => {
 
-    const [amount, setAmount] = useState(1)
+    const [amount, setAmount] = useState(props.amount)
 
     const newAmount = (event) => {
-        setAmount(event.target.value)
+        setAmount(props.setAmount(event.target.value))
     }
 
     
@@ -15,16 +15,11 @@ const Meal = (props) => {
     const form = {
         name: props.name,
         desc: props.desc,
-        price: props.amount,
+        price: props.price,
         amount: amount 
     }
 
-    const buttonClick = (event) => {
-        event.preventDefault();
-        console.log(form);
-        
-        
-    }
+   
 
 
     return (
@@ -32,16 +27,16 @@ const Meal = (props) => {
             <div className={styles.meal}>
                 <h3>{props.name}</h3>
                 <i>{props.desc}</i>
-                <b>{props.amount}</b>
+                <b>{props.price}</b>
             </div>
 
             <div className={styles.amount}>
             
                 <div>
                     <label>Amount</label>
-                    <input type = 'number' value = {amount} onChange = {newAmount} />
+                    <input type = 'number' defaultValue={1} onChange = {newAmount} />
                 </div>
-                <button type="submit" onClick = {buttonClick}> + Add </button>
+                <button type="submit" onClick = {props.newCartNumber} > + Add </button>
                
             </div>
 

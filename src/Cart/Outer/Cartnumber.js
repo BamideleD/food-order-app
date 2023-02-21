@@ -3,10 +3,10 @@ import styles from './Cartnumber.module.css'
 
 
 
-const Cartnumber = () => {
+const Cartnumber = (props) => {
     return (
         <div className={styles.number}>
-            {'0'}
+            {props.cartNumber}
         </div>
     )
 }

@@ -3,12 +3,12 @@ import Cartsection from "../Cart/Outer/Cartsection";
 
 import styles from './Navbar.module.css';
 
-const Navbar = () => {
+const Navbar = (props) => {
     return (
         <div className={styles.nav}>
             <h2 className={styles.reactmeals}>ReactMeals</h2>
             <div className={styles.cartsection}>
-                <Cartsection />
+                <Cartsection amount = {props.amount} cartNumber = {props.cartNumber} />
             </div> 
         </div>
     )
