@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useReducer, useState} from "react";
 import styles from "./App.module.css";
 import Cartmodal from "./Cart/Inner/Cartmodal";
 import ButtonContext from "./Context/ButtonContext";
@@ -8,21 +8,27 @@ import Background from "./UI/Background";
 import Navbar from "./UI/Navbar";
 
 
+const cartReducer = (state, action) => {
+  return {}
+}
 
 
 const App = () => {
 
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(1); 
 
   const [cartNumber, setCartNumber] = useState(0)
 
   const buttonClick = (event) => {
     event.preventDefault();
-    // console.log(form);
-    setCartNumber(+amount)
+    console.log(amount);
+    setCartNumber((...prev) => parseInt(prev) + parseInt(amount))
+    
   }
 
+  // useEffect (() => {}, [])
 
+  const [cartNo, dispatchCart] = useReducer(cartReducer, 1, buttonClick);
   
   return(
     <React.Fragment>
@@ -33,11 +39,12 @@ const App = () => {
         <ButtonContext.Provider value = {{amount: 1}}>
           <div className={styles.back}>
             <Background /> 
-            <Navbar amount = {amount} cartNumber = {cartNumber}  />
             <Info />
+            <Navbar amount = {amount} cartNumber = {cartNumber}  />
+            
           </div>
           <div className={styles.food}>
-            <FoodSection amount = {amount} setAmount = {setAmount} newCartNumber = {buttonClick}/>
+            <FoodSection amount = {amount} setAmount = {setAmount} buttonClick = {buttonClick}/>
           </div>
         </ButtonContext.Provider>
       </div>

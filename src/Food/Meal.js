@@ -34,9 +34,9 @@ const Meal = (props) => {
             
                 <div>
                     <label>Amount</label>
-                    <input type = 'number' defaultValue={1} onChange = {newAmount} />
+                    <input type = 'number' defaultValue = {amount} onChange = {newAmount} />
                 </div>
-                <button type="submit" onClick = {props.newCartNumber} > + Add </button>
+                <button type="submit" onClick = {props.buttonClick} > + Add </button>
                
             </div>
 
