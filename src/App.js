@@ -9,26 +9,28 @@ import Navbar from "./UI/Navbar";
 
 
 const cartReducer = (state, action) => {
-  return {}
+  if (action.type === 'AMOUNT'){
+    return {amount: action.val, cartNumber: action.val}
+  }
+  return {amount:1, cartNumber: 0}
+  
 }
 
 
 const App = () => {
 
-  const [amount, setAmount] = useState(1); 
-
-  const [cartNumber, setCartNumber] = useState(0)
+  const [cartNo, dispatchCart] = useReducer(cartReducer, {amount:1, cartNumber: 0});
 
   const buttonClick = (event) => {
     event.preventDefault();
-    console.log(amount);
-    setCartNumber((...prev) => parseInt(prev) + parseInt(amount))
+    console.log(cartNo.amount);
+    dispatchCart({type: 'CART_NUMBER', val: cartNo.amount});
     
   }
 
-  // useEffect (() => {}, [])
 
-  const [cartNo, dispatchCart] = useReducer(cartReducer, 1, buttonClick);
+
+  
   
   return(
     <React.Fragment>
@@ -40,11 +42,11 @@ const App = () => {
           <div className={styles.back}>
             <Background /> 
             <Info />
-            <Navbar amount = {amount} cartNumber = {cartNumber}  />
+            <Navbar amount = {cartNo.amount} cartNumber = {cartNo.cartNumber}  />
             
           </div>
           <div className={styles.food}>
-            <FoodSection amount = {amount} setAmount = {setAmount} buttonClick = {buttonClick}/>
+            <FoodSection amount = {cartNo.amount} setAmount = {cartReducer.amount} buttonClick = {buttonClick}/>
           </div>
         </ButtonContext.Provider>
       </div>
