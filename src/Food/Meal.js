@@ -16,14 +16,20 @@ const Meal = (props) => {
         name: props.name,
         desc: props.desc,
         price: props.price,
-        amount: amount 
+        amount: parseInt(props.amount)
     }
 
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(form);
+        return form
+    }
    
 
 
     return (
-        <form className={styles.overall}>
+        <form className={styles.overall} onSubmit = {handleSubmit}>
             <div className={styles.meal}>
                 <h3>{props.name}</h3>
                 <i>{props.desc}</i>
@@ -36,7 +42,7 @@ const Meal = (props) => {
                     <label>Amount</label>
                     <input type = 'number' defaultValue = {amount} onChange = {newAmount} />
                 </div>
-                <button type="submit" onClick = {props.buttonClick} > + Add </button>
+                <button type="submit" > + Add </button>
                
             </div>
 
