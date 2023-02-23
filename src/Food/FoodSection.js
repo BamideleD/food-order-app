@@ -19,7 +19,7 @@ const FoodSection = (props) => {
     return (
         <div className={styles.FoodSection}>
             {eachMeal.map((data) => {
-                return <Meal buttonClick = {props.buttonClick} amount = {props.amount} setAmount = {props.setAmount} name = {data.name} desc = {data.desc} price = {data.price} key = {data.key}/>
+                return <Meal amountRef = {props.amountRef} buttonClick = {props.buttonClick} amount = {props.amount} setAmount = {props.setAmount} name = {data.name} desc = {data.desc} price = {data.price} key = {data.key}/>
             })}
         </div>
     )

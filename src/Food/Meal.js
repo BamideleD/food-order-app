@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from './Meal.module.css';
 
 
 const Meal = (props) => {
+
+    
 
     const [amount, setAmount] = useState(props.amount)
 
@@ -34,7 +36,7 @@ const Meal = (props) => {
             
                 <div>
                     <label>Amount</label>
-                    <input type = 'number' defaultValue = {amount} onChange = {newAmount} />
+                    <input type = 'number' defaultValue = {amount} onChange = {newAmount} ref = {props.amountRef} />
                 </div>
                 <button type="submit" onClick = {props.buttonClick} > + Add </button>
                

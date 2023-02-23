@@ -1,4 +1,4 @@
-import React, {useEffect, useReducer, useState} from "react";
+import React, {useEffect, useReducer, useState, useRef} from "react";
 import styles from "./App.module.css";
 import Cartmodal from "./Cart/Inner/Cartmodal";
 import ButtonContext from "./Context/ButtonContext";
@@ -13,30 +13,34 @@ import Navbar from "./UI/Navbar";
 
 const App = () => {
 
+
+  
+
   const [amount, setAmount] = useState(1); 
+  
+  const amountRef = useRef(amount);
+
 
   const [cartNumber, setCartNumber] = useState(0)
 
   const buttonClick = (event) => {
     event.preventDefault();
-    console.log(amount);
     setCartNumber((...prev) => parseInt(prev) + parseInt(amount))
-    
+    console.log(amountRef.current.value);
+    setAmount(amountRef.current.value)
 
     
   }
 
-  const cartClick = () => {
-    return Cartmodal
-  }
+
 
   
   
   return(
     <React.Fragment>
-      <div>
+      {/* <div>
         <Cartmodal />
-      </div>
+      </div> */}
       <div className={styles.overall}>
         <ButtonContext.Provider value = {{amount: 1}}>
           <div className={styles.back}>
@@ -46,7 +50,7 @@ const App = () => {
             
           </div>
           <div className={styles.food}>
-            <FoodSection amount = {amount} setAmount = {setAmount} buttonClick = {buttonClick}/>
+            <FoodSection amount = {amount} setAmount = {setAmount} buttonClick = {buttonClick} amountRef = {amountRef}/>
           </div>
         </ButtonContext.Provider>
       </div>
