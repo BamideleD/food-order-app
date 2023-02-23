@@ -1,4 +1,5 @@
 import React from "react";
+import  ReactDOM from "react-dom";
 import Backdrop from "./Backdrop";
 import Cartoverlay from "./Cartoverlay";
 
@@ -9,10 +10,15 @@ import Cartoverlay from "./Cartoverlay";
 const Cartmodal = (props) => {
 
     return (
-        <div >
-            <Backdrop closePortal = {props.closePortal} />
-            <Cartoverlay />
-        </div>
+        <React.Fragment>
+            {ReactDOM.createPortal(
+                <div>
+                    <Backdrop closePortal = {props.closePortal} />
+                    <Cartoverlay />
+                </div>,
+                document.getElementById('cart-modal')
+            )}            
+        </React.Fragment>
     )
 
 }
