@@ -8,9 +8,7 @@ import Background from "./UI/Background";
 import Navbar from "./UI/Navbar";
 
 
-const cartReducer = (state, action) => {
-  return {}
-}
+
 
 
 const App = () => {
@@ -24,17 +22,21 @@ const App = () => {
     console.log(amount);
     setCartNumber((...prev) => parseInt(prev) + parseInt(amount))
     
+
+    
   }
 
-  // useEffect (() => {}, [])
+  const cartClick = () => {
+    return Cartmodal
+  }
 
-  const [cartNo, dispatchCart] = useReducer(cartReducer, 1, buttonClick);
+  
   
   return(
     <React.Fragment>
-      {/* <div>
+      <div>
         <Cartmodal />
-      </div> */}
+      </div>
       <div className={styles.overall}>
         <ButtonContext.Provider value = {{amount: 1}}>
           <div className={styles.back}>
