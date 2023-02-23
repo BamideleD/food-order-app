@@ -6,11 +6,11 @@ import Cartoverlay from "./Cartoverlay";
 
 
 
-const Cartmodal = () => {
+const Cartmodal = (props) => {
 
     return (
-        <div>
-            <Backdrop />
+        <div >
+            <Backdrop closePortal = {props.closePortal} />
             <Cartoverlay />
         </div>
     )

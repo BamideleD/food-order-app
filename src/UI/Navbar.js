@@ -8,7 +8,7 @@ const Navbar = (props) => {
         <div className={styles.nav}>
             <h2 className={styles.reactmeals}>ReactMeals</h2>
             <div className={styles.cartsection}>
-                <Cartsection amount = {props.amount} cartNumber = {props.cartNumber} />
+                <Cartsection amount = {props.amount} cartNumber = {props.cartNumber} cartClick = {props.cartClick} />
             </div> 
         </div>
     )

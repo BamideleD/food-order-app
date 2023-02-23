@@ -13,6 +13,8 @@ import Navbar from "./UI/Navbar";
 
 const App = () => {
 
+  const [modal, setModal] = useState(false);
+
   const [amount, setAmount] = useState(1); 
 
   const [cartNumber, setCartNumber] = useState(0)
@@ -27,7 +29,11 @@ const App = () => {
   }
 
   const cartClick = () => {
-    return Cartmodal
+    setModal(true)
+  }
+
+  const closePortal = () => {
+    setModal (false)
   }
 
   
@@ -35,14 +41,14 @@ const App = () => {
   return(
     <React.Fragment>
       <div>
-        <Cartmodal />
+        {modal && <Cartmodal closePortal = {closePortal} />}
       </div>
       <div className={styles.overall}>
         <ButtonContext.Provider value = {{amount: 1}}>
           <div className={styles.back}>
             <Background /> 
             <Info />
-            <Navbar amount = {amount} cartNumber = {cartNumber}  />
+            <Navbar amount = {amount} cartNumber = {cartNumber} cartClick = {cartClick} />
             
           </div>
           <div className={styles.food}>
