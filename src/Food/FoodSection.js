@@ -5,23 +5,17 @@ import Meal from "./Meal";
 
 const FoodSection = (props) => {
 
-    const eachMeal = [
-        {name:'Sushi', desc: 'Finest fish and veggies', price: '$22.99', key: '1'}, 
-        {name:'Schnitzel', desc: 'A german specialty!', price: '$16.50', key:'2'}, 
-        {name:'Barbecue Burger', desc: 'American, raw, meaty', price: '$12.99', key: '3'}, 
-        {name:'Green Bowl', desc: 'Healthy...and green...', price: '$18.99', key: '4'}]
-
-
-
-    
 
 
     return (
         <div className={styles.FoodSection}>
-            {eachMeal.map((data) => {
+            {props.eachMeal.map((data) => {
                 return <Meal    
-                                
+                                submitMeal = {props.submitMeal} 
+                                setSubmitMeal = {props.setSubmitMeal}
+                                form = {props.form}
                                 buttonClick = {props.buttonClick} 
+                                handleSubmit = {props.handleSubmit}
                                 amount = {props.amount} 
                                 setAmount = {props.setAmount} 
                                 name = {data.name} 

@@ -15,6 +15,9 @@ const App = () => {
 
   const [modal, setModal] = useState(false);
 
+  const [submitMeal, setSubmitMeal] = useState({
+  })
+
   const [amount, setAmount] = useState(1); 
 
   const [cartNumber, setCartNumber] = useState(0)
@@ -36,7 +39,21 @@ const App = () => {
     setModal (false)
   }
 
+
+
+  const eachMeal = [
+    {name:'Sushi', desc: 'Finest fish and veggies', price: '$22.99', key: '1'}, 
+    {name:'Schnitzel', desc: 'A german specialty!', price: '$16.50', key:'2'}, 
+    {name:'Barbecue Burger', desc: 'American, raw, meaty', price: '$12.99', key: '3'}, 
+    {name:'Green Bowl', desc: 'Healthy...and green...', price: '$18.99', key: '4'}]
+
+ 
+
   
+
+  
+
+
 
   
 
@@ -45,7 +62,7 @@ const App = () => {
   return(
     <React.Fragment>
       <div>
-        {modal && <Cartmodal closePortal = {closePortal} />}
+        {modal && <Cartmodal closePortal = {closePortal} submitMeal = {submitMeal} />}
       </div>
       <div className={styles.overall}>
         <ButtonContext.Provider value = {{amount: 1}}>
@@ -56,7 +73,7 @@ const App = () => {
             
           </div>
           <div className={styles.food}>
-            <FoodSection amount = {amount} setAmount = {setAmount} buttonClick = {buttonClick}/>
+            <FoodSection eachMeal = {eachMeal} submitMeal = {submitMeal} setSubmitMeal = {setSubmitMeal} amount = {amount} setAmount = {setAmount} buttonClick = {buttonClick}/>
           </div>
         </ButtonContext.Provider>
       </div>
