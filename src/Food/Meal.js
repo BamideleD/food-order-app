@@ -47,7 +47,7 @@ const Meal = (props) => {
             <div className={styles.meal}>
                 <h3>{props.name}</h3>
                 <i>{props.desc}</i>
-                <b>{props.price}</b>
+                <b> ${props.price}</b>
             </div>
 
             <div className={styles.amount}>
