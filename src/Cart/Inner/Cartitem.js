@@ -8,7 +8,7 @@ const Cartitem = (props) => {
     return(
         <div className={styles.overall}>
             <div className={styles.name}>
-                {props.submitMeal.name}
+                {props.name}
             </div>
             <div className={styles.plusminus}>
                 <div className={styles.minus}> - </div>
@@ -16,10 +16,10 @@ const Cartitem = (props) => {
             </div>
             <div className={styles.priceXamount}>
                 <div className={styles.price}>
-                    ${props.submitMeal.price}
+                    ${props.price}
                 </div>
                 <div className={styles.amount}>
-                    x {props.submitMeal.amount}
+                    x {props.amount}
                 </div>
             </div>
             <div className={styles.border}>

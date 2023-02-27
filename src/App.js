@@ -15,8 +15,7 @@ const App = () => {
 
   const [modal, setModal] = useState(false);
 
-  const [submitMeal, setSubmitMeal] = useState({
-  })
+  const [submitMeal, setSubmitMeal] = useState([])
 
   const [amount, setAmount] = useState(1); 
 

@@ -8,7 +8,14 @@ import styles from './Cartoverlay.module.css';
 const Cartoverlay = (props) => {
     return (
         <div className={styles.overlay}>
-            <Cartitem submitMeal = {props.submitMeal} />
+            {props.submitMeal.map((data) => {
+                return <Cartitem 
+                                    name = {data.name}
+                                    price = {data.price} 
+                                    amount = {data.amount}
+                                    key =  {Math.random()}/>
+            })}
+            
         </div>
     )
 }

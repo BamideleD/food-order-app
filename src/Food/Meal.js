@@ -7,32 +7,33 @@ const Meal = (props) => {
     const [amount, setAmount] = useState(props.amount)
 
     const newAmount = (event) => {
-        props.setAmount(event.target.value)
+
         setAmount((event.target.value))
+        props.setAmount(event.target.value)
+        
+    }
+
+    const formal =     {
+        id: Math.random(),
+        name:props.name,
+        desc:props.desc,
+        price: props.price,
+        amount: parseInt(amount),    
     }
 
     const [submitMeal, setSubmitMeal] = useState(props.submitMeal)
 
-    const submit  = () => {
-        
-        props.setSubmitMeal(
-            {
-                name:props.name,
-                desc:props.desc,
-                price: props.price,
-                amount: parseInt(amount)
-            }
-        )
-        setSubmitMeal({
-            name:props.name,
-            desc:props.desc,
-            price: props.price,
-            amount: parseInt(amount)
-    });
-    }
 
     const handleSubmit = (event) => {
     event.preventDefault();
+
+   
+
+    setSubmitMeal(submitMeal.push(formal));
+    
+
+    props.setSubmitMeal(submitMeal)
+
     console.log(submitMeal);
     return submitMeal
   }
@@ -56,7 +57,7 @@ const Meal = (props) => {
                     <label>Amount</label>
                     <input type = 'number' defaultValue = {amount} onChange = {newAmount} />
                 </div>
-                <button type="submit" onClick={submit} > + Add </button>
+                <button type="submit"> + Add </button>
                
             </div>
 
