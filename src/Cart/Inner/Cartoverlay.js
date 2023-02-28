@@ -8,7 +8,7 @@ import styles from './Cartoverlay.module.css';
 const Cartoverlay = (props) => {
     return (
         <div className={styles.overlay}>
-            {props.submitMeal.map((data) => {
+            {props.combinedMeals.map((data) => {
                 return <Cartitem 
                                     name = {data.name}
                                     price = {data.price} 

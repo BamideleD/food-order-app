@@ -51,8 +51,23 @@ const App = () => {
     {name:'Barbecue Burger', desc: 'American, raw, meaty', price:12.99, key: '3'}, 
     {name:'Green Bowl', desc: 'Healthy...and green...', price:18.99, key: '4'}]
 
+
+  const combineDuplicateMeals = (meals) => {
+    const mealMap = new Map();
+    meals.forEach(meal => {
+      const key = meal.name + meal.desc;
+      if (mealMap.has(key)) {
+        mealMap.get(key).amount += meal.amount;
+      } else {
+        mealMap.set(key, Object.assign({}, meal));
+      }
+    });
+    return [...mealMap.values()];
+  }
+
+
+  const combinedMeals = combineDuplicateMeals(submitMeal);
  
-
   
 
   
@@ -60,13 +75,13 @@ const App = () => {
 
 
   
-console.log(submitMeal);
+
   
   
   return(
     <React.Fragment>
       <div>
-        {modal && <Cartmodal closePortal = {closePortal} submitMeal = {submitMeal} />}
+        {modal && <Cartmodal closePortal = {closePortal} combinedMeals = {combinedMeals} />}
       </div>
       <div className={styles.overall}>
         <ButtonContext.Provider value = {{amount: 1}}>
