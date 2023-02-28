@@ -21,21 +21,13 @@ const Meal = (props) => {
         amount: parseInt(amount),    
     }
 
-    const [submitMeal, setSubmitMeal] = useState(props.submitMeal)
+    
 
+    
 
     const handleSubmit = (event) => {
     event.preventDefault();
-
-   
-
-    setSubmitMeal(submitMeal.push(formal));
-    
-
-    props.setSubmitMeal(submitMeal)
-
-    console.log(submitMeal);
-    return submitMeal
+    props.setSubmitMeal(formal)
   }
 
 
@@ -45,7 +37,7 @@ const Meal = (props) => {
 
     return (
         <form className={styles.overall} onSubmit = {handleSubmit}>
-            <div className={styles.meal}>
+            <div className={styles.meal} key = {formal.id}>
                 <h3>{props.name}</h3>
                 <i>{props.desc}</i>
                 <b> ${props.price}</b>

@@ -15,7 +15,12 @@ const App = () => {
 
   const [modal, setModal] = useState(false);
 
-  const [submitMeal, setSubmitMeal] = useState([])
+  const [submitMeal, setSubmitMeal] = useState([]);
+
+
+  const addMeal = (newMeal) => {
+    setSubmitMeal((prevSubmitMeal) => [...prevSubmitMeal, newMeal]);
+  };
 
   const [amount, setAmount] = useState(1); 
 
@@ -55,7 +60,7 @@ const App = () => {
 
 
   
-
+console.log(submitMeal);
   
   
   return(
@@ -72,7 +77,7 @@ const App = () => {
             
           </div>
           <div className={styles.food}>
-            <FoodSection eachMeal = {eachMeal} submitMeal = {submitMeal} setSubmitMeal = {setSubmitMeal} amount = {amount} setAmount = {setAmount} buttonClick = {buttonClick}/>
+            <FoodSection eachMeal = {eachMeal} submitMeal = {submitMeal} setSubmitMeal = {addMeal} amount = {amount} setAmount = {setAmount} buttonClick = {buttonClick}/>
           </div>
         </ButtonContext.Provider>
       </div>
