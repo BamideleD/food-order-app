@@ -13,10 +13,9 @@ const Meal = (props) => {
         
     }
 
-    const priceXamount = parseFloat(props.price) * parseFloat(amount)
+    
 
     const formal =     {
-        priceXamount: priceXamount,
         name:props.name,
         desc:props.desc,
         price: props.price,

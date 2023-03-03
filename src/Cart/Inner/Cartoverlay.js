@@ -10,7 +10,7 @@ const Cartoverlay = (props) => {
 
     const totalAmount = props.combinedMeals.map((meal)=> {
         console.log(meal);
-        return meal.priceXamount
+        return parseFloat(meal.price) * parseFloat(meal.amount)
     })
 
 
