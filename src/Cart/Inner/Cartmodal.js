@@ -14,7 +14,7 @@ const Cartmodal = (props) => {
             {ReactDOM.createPortal(
                 <div>
                     <Backdrop closePortal = {props.closePortal} />
-                    <Cartoverlay combinedMeals = {props.combinedMeals}/>
+                    <Cartoverlay combinedMeals = {props.combinedMeals} priceXamount = {props.priceXamount} />
                 </div>,
                 document.getElementById('cart-modal')
             )}            

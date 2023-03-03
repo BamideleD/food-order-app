@@ -13,8 +13,10 @@ const Meal = (props) => {
         
     }
 
+    const priceXamount = parseFloat(props.price) * parseFloat(amount)
+
     const formal =     {
-        id: Math.random(),
+        priceXamount: priceXamount,
         name:props.name,
         desc:props.desc,
         price: props.price,

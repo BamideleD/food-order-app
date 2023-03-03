@@ -28,7 +28,6 @@ const App = () => {
 
   const buttonClick = (event) => {
     event.preventDefault();
-    console.log(amount);
     setCartNumber((...prev) => parseInt(prev) + parseInt(amount))
     
 

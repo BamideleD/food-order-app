@@ -3,9 +3,37 @@
     color: black;
     border-radius: 10px;
     position: fixed;
-    top: 30vh;
+    top: 15vh;
     left: 28.7%;
     width: 43%;
     z-index: 100;
     overflow: hidden
+}
+
+.ordersection {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 5px 10px 5px
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px 15px 15px;
+    font-weight: bolder;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    
+
+}
+
+.closebutton {
+    margin: 0px 15px;
+    color: rgb(205, 87, 44);
+    border : 1px solid rgb(205, 87, 44); 
+    background-color: white;
 }
