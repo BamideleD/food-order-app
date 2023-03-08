@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Cartitem from "./Cartitem";
 import styles from './Cartoverlay.module.css';
 
@@ -6,15 +6,22 @@ import styles from './Cartoverlay.module.css';
 
 
 const Cartoverlay = (props) => {
+    
+    console.log(props.combinedMeals);
+
+    // const calcAmount = props.combinedMeals.map((meal)=> {
+    //     return parseFloat(meal.amount)
+    // })
 
 
-    const totalAmount = props.combinedMeals.map((meal)=> {
-        console.log(meal);
-        return parseFloat(meal.price) * parseFloat(meal.amount)
+    // const [combinedAmount, setCombinedAmount] = useState (amount)
+
+    
+    const totalAmount = props.combinedMeals.map((data)=> {
+        return parseFloat(data.price) * parseFloat(data.amount)
     })
 
 
-    console.log(totalAmount);
 
     let sum = 0;
     totalAmount.map(x => sum += x);
@@ -24,7 +31,9 @@ const Cartoverlay = (props) => {
         <div className={styles.overlay}>
             
             {props.combinedMeals.map((data) => {
-                return <Cartitem 
+                return <Cartitem
+                                    // combinedAmount = {combinedAmount}
+                                    // setCombinedAmount = {setCombinedAmount} 
                                     name = {data.name}
                                     price = {data.price} 
                                     amount = {data.amount}
@@ -36,7 +45,7 @@ const Cartoverlay = (props) => {
                     <div> ${sum.toFixed(2)} </div>
                 </div>
                 <div className={styles.buttons}>
-                    <button className={styles.closebutton}> Close </button>
+                    <button className={styles.closebutton} onClick = {props.closePortal}> Close </button>
                     <button> Order </button>
                 </div>
             </div>
