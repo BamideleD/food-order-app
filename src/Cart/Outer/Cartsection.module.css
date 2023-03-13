@@ -13,6 +13,12 @@
 
 
 }
+.cart:hover,.cart:active {
+    background-color: rgb(82, 22, 22);
+}
+
+
+
 h4{
     
     padding: 0px 20px;

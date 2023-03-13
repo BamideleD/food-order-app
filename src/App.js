@@ -1,11 +1,12 @@
 import React, {useEffect, useReducer, useState} from "react";
 import styles from "./App.module.css";
 import Cartmodal from "./Cart/Inner/Cartmodal";
-import ButtonContext from "./Context/ButtonContext";
+import ButtonContext from "./Store/button-context";
 import FoodSection from "./Food/FoodSection";
 import Info from "./Info/Info";
 import Background from "./UI/Background";
 import Navbar from "./UI/Navbar";
+import CartProvider from "./Store/CartProvider";
 
 
 
@@ -64,9 +65,9 @@ const App = () => {
     return [...mealMap.values()];
   }
 
-
-  const combinedMeals = combineDuplicateMeals(submitMeal);
  
+  const combinedMeals = combineDuplicateMeals(submitMeal);
+
   
 
   
@@ -78,12 +79,11 @@ const App = () => {
   
   
   return(
-    <React.Fragment>
+    <CartProvider>
       <div>
         {modal && <Cartmodal closePortal = {closePortal} combinedMeals = {combinedMeals} />}
       </div>
       <div className={styles.overall}>
-        <ButtonContext.Provider value = {{amount: 1}}>
           <div className={styles.back}>
             <Background /> 
             <Info />
@@ -93,9 +93,8 @@ const App = () => {
           <div className={styles.food}>
             <FoodSection eachMeal = {eachMeal} submitMeal = {submitMeal} setSubmitMeal = {addMeal} amount = {amount} setAmount = {setAmount} buttonClick = {buttonClick}/>
           </div>
-        </ButtonContext.Provider>
       </div>
-    </React.Fragment>
+    </CartProvider>
   )
 }
 
