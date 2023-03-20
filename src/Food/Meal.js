@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from './Meal.module.css';
 
 
 const Meal = (props) => {
+    const amountInputRef = useRef();
 
     const [amount, setAmount] = useState(props.amount)
 
@@ -13,13 +14,15 @@ const Meal = (props) => {
         
     }
 
+
+    const enteredAmount = amountInputRef.current.value
     
 
     const formal =     {
         name:props.name,
         desc:props.desc,
         price: props.price,
-        amount: parseInt(amount),    
+        amount: parseInt(enteredAmount)   
     }
 
     
@@ -28,7 +31,8 @@ const Meal = (props) => {
 
     const handleSubmit = (event) => {
     event.preventDefault();
-    props.setSubmitMeal(formal)
+    props.setSubmitMeal(formal);
+     
   }
 
 
@@ -48,12 +52,10 @@ const Meal = (props) => {
             
                 <div>
                     <label>Amount</label>
-                    <input type = 'number' defaultValue = {amount} onChange = {newAmount} />
+                    <input type = 'number' ref = {amountInputRef} defaultValue = {amount} min = '1' max = '5' step = '1' onChange = {newAmount} />
                 </div>
-                <button type="submit"> + Add </button>
-               
+                <button type="submit"> + Add </button> 
             </div>
-
         </form>
     )
 }

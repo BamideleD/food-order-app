@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Cartitem from "./Cartitem";
+import CartContext from "../../Store/cart-context";
 import styles from './Cartoverlay.module.css';
 
 
@@ -7,7 +8,7 @@ import styles from './Cartoverlay.module.css';
 
 const Cartoverlay = (props) => {
 
-
+    
 
     
 
