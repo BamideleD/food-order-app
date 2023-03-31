@@ -1,7 +1,6 @@
-import React, {useEffect, useReducer, useState} from "react";
+import React, {useState} from "react";
 import styles from "./App.module.css";
 import Cartmodal from "./Cart/Inner/Cartmodal";
-import ButtonContext from "./Store/button-context";
 import FoodSection from "./Food/FoodSection";
 import Info from "./Info/Info";
 import Background from "./UI/Background";
