@@ -16,13 +16,6 @@ const App = () => {
 
   const [modal, setModal] = useState(false);
 
-  const [submitMeal, setSubmitMeal] = useState([]);
-
-
-  const addMeal = (newMeal) => {
-    setSubmitMeal((prevSubmitMeal) => [...prevSubmitMeal, newMeal]);
-  };
-
   const [amount, setAmount] = useState(1); 
 
   const [cartNumber, setCartNumber] = useState(0)
@@ -46,27 +39,13 @@ const App = () => {
 
 
   const eachMeal = [
-    {name:'Sushi', desc: 'Finest fish and veggies', price:22.99, key: '1'}, 
-    {name:'Schnitzel', desc: 'A german specialty!', price:16.50, key:'2'}, 
-    {name:'Barbecue Burger', desc: 'American, raw, meaty', price:12.99, key: '3'}, 
-    {name:'Green Bowl', desc: 'Healthy...and green...', price:18.99, key: '4'}]
+    {name:'Sushi', desc: 'Finest fish and veggies', price:22.99, id: '1'}, 
+    {name:'Schnitzel', desc: 'A german specialty!', price:16.50, id:'2'}, 
+    {name:'Barbecue Burger', desc: 'American, raw, meaty', price:12.99, id: '3'}, 
+    {name:'Green Bowl', desc: 'Healthy...and green...', price:18.99, id: '4'}]
 
 
-  const combineDuplicateMeals = (meals) => {
-    const mealMap = new Map();
-    meals.forEach(meal => {
-      const key = meal.name + meal.desc;
-      if (mealMap.has(key)) {
-        mealMap.get(key).amount += meal.amount;
-      } else {
-        mealMap.set(key, Object.assign({}, meal));
-      }
-    });
-    return [...mealMap.values()];
-  }
 
- 
-  const combinedMeals = combineDuplicateMeals(submitMeal);
 
   
 
@@ -81,7 +60,7 @@ const App = () => {
   return(
     <CartProvider>
       <div>
-        {modal && <Cartmodal closePortal = {closePortal} combinedMeals = {combinedMeals} />}
+        {modal && <Cartmodal closePortal = {closePortal} />}
       </div>
       <div className={styles.overall}>
           <div className={styles.back}>
@@ -91,7 +70,7 @@ const App = () => {
             
           </div>
           <div className={styles.food}>
-            <FoodSection eachMeal = {eachMeal} submitMeal = {submitMeal} setSubmitMeal = {addMeal} amount = {amount} setAmount = {setAmount} buttonClick = {buttonClick}/>
+            <FoodSection eachMeal = {eachMeal} amount = {amount} setAmount = {setAmount} buttonClick = {buttonClick}/>
           </div>
       </div>
     </CartProvider>

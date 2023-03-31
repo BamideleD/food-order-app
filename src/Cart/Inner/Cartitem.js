@@ -10,10 +10,7 @@ const Cartitem = (props) => {
 
     const [value, setValue] = useState(props.amount)
 
-    const setAmount = (action = "plus") => {
-        const newValue = action === "plus" ? value + 1 : value - 1
-        setValue(newValue)
-    }
+ 
 
     
 
@@ -24,12 +21,12 @@ const Cartitem = (props) => {
                 {props.name}
             </div>
             <div className={styles.plusminus}>
-                <div className={styles.minus} onClick = {() => setAmount("minus")}> - </div>
-                <div className={styles.plus} onClick = {() => setAmount("plus")}> + </div>
+                <div className={styles.minus} onClick = {props.onRemove}> - </div>
+                <div className={styles.plus} onClick = {props.onAdd}> + </div>
             </div>
             <div className={styles.priceXamount}>
                 <div className={styles.price}>
-                    ${props.price}
+                    ${props.price.toFixed(2)}
                 </div>
                 <div className={styles.amount}>
                     x {value}
