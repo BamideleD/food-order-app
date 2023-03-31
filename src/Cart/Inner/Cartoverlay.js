@@ -9,17 +9,30 @@ import styles from './Cartoverlay.module.css';
 const Cartoverlay = (props) => {
 
     
+    const cartCtx =  useContext(CartContext);
+
+    const totalAmount = cartCtx.totalAmount.toFixed(2);
+
+    const hasItems = cartCtx.item.length > 0
+
+    const cartItemRemove = (id) => {
+      cartCtx.removeItem({...id})
+    }
+
+    const cartItemAdd = (item) => {
+      cartCtx.addItem({...item,amount:1})
+    }
+
+
+
+
 
     
 
-    const totalAmount = props.combinedMeals.map((data)=> {
-        return parseFloat(data.price) * parseFloat(data.amount)
-    })
 
 
 
-    let sum = 0;
-    totalAmount.map(x => sum += x);
+    
 
     
 
@@ -27,22 +40,24 @@ const Cartoverlay = (props) => {
     return (
         <div className={styles.overlay}>
             
-            {props.combinedMeals.map((data) => {
+            {cartCtx.item.map((data) => {
                 return <Cartitem 
                                     name = {data.name}
                                     price = {data.price} 
                                     amount = {data.amount}
                                     key =  {Math.random()}
-                                                             />
+                                    onRemove = {cartItemRemove.bind(null, data)}
+                                    onAdd = {cartItemAdd.bind(null, data)}
+                                                             /> 
             })}
-            <div className={styles.ordersection}>
+            <div className={styles.ordersection}> 
                 <div className={styles.total}>
                     <span> Total Amount </span>
-                    <sapn> ${sum.toFixed(2)}</sapn>
+                    <span> ${totalAmount }</span>
                 </div>
                 <div className={styles.buttons}>
                     <button className={styles.closebutton} onClick = {props.closePortal}> Close </button>
-                    <button> Order </button>
+                    {hasItems && <button> Order </button>}
                 </div>
             </div>
             
