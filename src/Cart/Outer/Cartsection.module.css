@@ -41,7 +41,7 @@ h4{
     50% {
         transform: scale(1.15);
     }
-    10 0% {
+    100% {
         transform: scale(1);
     }
 }
