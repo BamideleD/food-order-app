@@ -29,6 +29,11 @@
     margin-right: 5px;
 }
 
+.plus:hover, .minus:hover {
+    background-color: rgb(132, 36, 36);
+    color: white;
+}
+
 .priceXamount{
     display: flex;
     flex-direction: row;
