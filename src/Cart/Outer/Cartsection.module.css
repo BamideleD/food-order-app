@@ -24,6 +24,28 @@ h4{
     padding: 0px 20px;
 }
 
+.bump {
+    animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+    0% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(0.9);
+    }
+    30% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    10 0% {
+        transform: scale(1);
+    }
+}
+
 @media screen and (max-width: 500px)  {
     .cart{
         color:white;

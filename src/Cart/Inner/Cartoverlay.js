@@ -23,20 +23,6 @@ const Cartoverlay = (props) => {
       cartCtx.addItem({...item,amount:1})
     }
 
-
-
-
-
-    
-
-
-
-
-    
-
-    
-
-
     return (
         <div className={styles.overlay}>
             

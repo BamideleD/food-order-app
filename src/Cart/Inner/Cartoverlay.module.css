@@ -37,3 +37,9 @@
     border : 1px solid rgb(205, 87, 44); 
     background-color: white;
 }
+
+.closebutton:hover {
+    margin: 0px 15px;
+    background-color: rgb(132, 36, 36);
+    color: white;
+}
